@@ -3,7 +3,28 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-"""Script to train RL agent with RSL-RL."""
+"""
+Script to train RL agent with RSL-RL.
+
+Example usage:
+
+.. code-block:: bash
+
+    # train arguments
+    --headless --max_iteration 5000 --resume True
+
+    # train(flat)
+    python scripts/rsl_rl/train.py --task=Velocity-Flat-Go2-v0
+    
+    # train(rough)
+    python scripts/rsl_rl/train.py --task=Velocity-Rough-Go2-v0
+    
+    # train(fuzzy)
+    python scripts/rsl_rl/train.py --task=Template-Isaac-Velocity-Fuzzy-Go2-v0
+    
+    # tensorboard
+    python -m tensorboard.main --logdir logs/rsl_rl
+"""
 
 """Launch Isaac Sim Simulator first."""
 
