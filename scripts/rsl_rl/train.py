@@ -19,6 +19,9 @@ Example usage:
     # train(rough)
     python scripts/rsl_rl/train.py --task=Velocity-Rough-Go2-v0
     
+    # train(pothole)
+    python scripts/rsl_rl/train.py --task=Velocity-Pothole-Go2-v0
+    
     # train(fuzzy)
     python scripts/rsl_rl/train.py --task=Template-Isaac-Velocity-Fuzzy-Go2-v0
     
