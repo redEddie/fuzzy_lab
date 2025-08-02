@@ -122,7 +122,7 @@ def main():
     print(f"   🎮 Use WASD keys to control the robot")
     
     # 1) Policy 로드 (옵션)
-    policy_path = os.path.abspath(args_cli.checkpoint or "policy.pt")
+    policy_path = os.path.abspath(args_cli.checkpoint or "scripts/policy.pt")
     policy = load_policy(policy_path, args_cli.device)
 
     # 2) 키보드 제어
