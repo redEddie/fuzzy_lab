@@ -43,9 +43,34 @@ class Go2FlatPPORunnerCfg(Go2RoughPPORunnerCfg):
 
 
 @configclass
-class Go2PotholePPORunnerCfg(Go2FlatPPORunnerCfg):
+class Go2PotholePPORunnerCfg(Go2RoughPPORunnerCfg):
+    """PPO runner configuration for Go2 pothole terrain."""
+    
     def __post_init__(self):
         super().__post_init__()
 
         self.max_iterations = 3000
         self.experiment_name = "go2_pothole"
+        self.policy.actor_hidden_dims = [128, 128, 128]
+        self.policy.critic_hidden_dims = [128, 128, 128]
+        
+        # Pothole terrain specific adjustments
+        # Increase exploration due to challenging terrain
+        # self.algorithm.entropy_coef = 0.01
+        
+        # Adjust learning rate for better stability on irregular terrain
+        # self.algorithm.learning_rate = 3e-4
+        
+        # Increase batch size for more stable learning
+        # self.algorithm.num_learning_epochs = 8
+        # self.algorithm.num_mini_batches = 4
+
+@configclass
+class Go2CylinderPPORunnerCfg(Go2RoughPPORunnerCfg):
+    def __post_init__(self):
+        super().__post_init__()
+
+        self.max_iterations = 3000
+        self.experiment_name = "go2_cylinder"
+        self.policy.actor_hidden_dims = [128, 128, 128]
+        self.policy.critic_hidden_dims = [128, 128, 128]

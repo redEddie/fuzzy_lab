@@ -1,4 +1,14 @@
-"""Script to play a checkpoint if an RL agent from RSL-RL."""
+"""Script to play a checkpoint if an RL agent from RSL-RL.
+
+python scripts/rsl_rl/play.py --task=Velocity-Flat-Go2-Play-v0
+
+
+python scripts/rsl_rl/play.py --task Velocity-Pothole-Go2-Play-v0
+python scripts\rsl_rl\play.py --task Velocity-Flat-Go2-HierarchicalANFIS-v0 --num_envs 32
+
+python -m tensorboard.main --logdir logs/rsl_rl
+
+"""
 
 """Launch Isaac Sim Simulator first."""
 

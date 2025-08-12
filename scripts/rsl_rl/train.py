@@ -13,10 +13,8 @@ Example usage:
     # train arguments
     --headless --max_iteration 5000 --resume True
 
-    # train(flat)
+    # train(ORIGINAL)
     python scripts/rsl_rl/train.py --task=Velocity-Flat-Go2-v0
-    
-    # train(rough)
     python scripts/rsl_rl/train.py --task=Velocity-Rough-Go2-v0
     
     # train(pothole)

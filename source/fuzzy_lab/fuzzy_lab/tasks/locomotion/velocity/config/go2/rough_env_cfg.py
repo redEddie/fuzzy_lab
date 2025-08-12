@@ -1,6 +1,8 @@
 from isaaclab.utils import configclass
 
-from fuzzy_lab.tasks.locomotion.velocity.fuzzy_env_cfg import LocomotionVelocityFuzzyEnvCfg
+from fuzzy_lab.tasks.locomotion.velocity.velocity_env_cfg import LocomotionVelocityRoughEnvCfg
+from fuzzy_lab.tasks.locomotion.velocity.go2_velocity_env_cfg import Go2LocomotionVelocityRoughEnvCfg
+
 
 ##
 # Pre-defined configs
@@ -9,11 +11,11 @@ from isaaclab_assets.robots.unitree import UNITREE_GO2_CFG
 
 
 @configclass
-class Go2RoughEnvCfg(LocomotionVelocityFuzzyEnvCfg):
+class Go2RoughEnvCfg(Go2LocomotionVelocityRoughEnvCfg):
     def __post_init__(self):
         # post init of parent
         super().__post_init__()
-        # switch robot to anymal-d
+        # switch robot to Go2
         self.scene.robot = UNITREE_GO2_CFG.replace(prim_path="{ENV_REGEX_NS}/Robot")
 
 
